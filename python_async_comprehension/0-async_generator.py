@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module writes a coroutine called async_geertor
+"""This module writes a coroutine called async_genertor
 that takes no arguments"""
 import random
 import asyncio
@@ -12,4 +12,4 @@ async def async_generator():
         # waits for 1 second
         await asyncio.sleep(1)
         # yield random bumber between 1 to 10
-        yield random.randint(0, 10)
+        yield random.uniform(0, 10)
