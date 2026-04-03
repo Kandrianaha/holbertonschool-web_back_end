@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module takes the code from wait_n and alter it 
+"""This module takes the code from wait_n and alter it
 to a new function task_wait_n"""
 import asyncio
 import random
