@@ -14,6 +14,7 @@ async def task_wait_random(max_delay: int) -> float:
     return delay
 
 
+
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """returns a list of all delays in the order they finished"""
     """creating a list first"""
