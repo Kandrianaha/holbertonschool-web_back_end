@@ -6,6 +6,7 @@ import random
 from typing import List
 
 
+
 async def task_wait_random(max_delay: int) -> float:
     """Wait for a random delay between 0 and max_delay and return the delay."""
     delay = random.random() * max_delay
