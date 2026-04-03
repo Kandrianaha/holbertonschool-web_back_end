@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""This module waits for a random delay between 0 and 10
+using random and asyncio modules"""
 import asyncio
 import random
 
