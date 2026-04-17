@@ -41,6 +41,6 @@ class Server:
         dataset = self.dataset()
 
         if start > len(dataset):
-            return[]
-        
+            return []
+
         return dataset[start:end]
