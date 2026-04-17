@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Simple pagination"""
-
 import csv
 import math
 from typing import List
@@ -15,8 +14,7 @@ def index_range(page, page_size):
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
-    """
+    """Server class to paginate a database of popular baby names."""
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
