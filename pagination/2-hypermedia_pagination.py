@@ -6,6 +6,7 @@ from typing import List, Dict
 
 index_range = __import__('0-simple_helper_function').index_range
 
+
 class Server:
     """Server class to paginate a database of popular baby names."""
     DATA_FILE = "Popular_Baby_Names.csv"
@@ -39,7 +40,7 @@ class Server:
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         return {
-            'page_size' : len(data),
+            'page_size': len(data),
             'page': page,
             'data': data,
             'next_page': page + 1 if page < total_pages else None,
