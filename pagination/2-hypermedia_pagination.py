@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Hypermedia pagination"""
+"""Module for Hypermedia pagination"""
 import csv
 import math
 from typing import List, Dict
@@ -12,6 +12,7 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """Initialize Server with empty dataset cache"""
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -25,6 +26,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Return the correct page of the dataset"""
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
@@ -37,6 +39,7 @@ class Server:
         return dataset[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+        """Returns a dictionary  with hypermedia pagination"""
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         return {
