@@ -12,6 +12,7 @@ class Server:
     def __init__(self):
         """Initialize Server with empty dataset cache"""
         self.__dataset = None
+        self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
         """Cached dataset"""
@@ -25,12 +26,12 @@ class Server:
 
     def indexed_dataset(self) -> Dict[int, List]:
         """Return dataset indexed by position, truncated to 1000 rows"""
-        if self._indexed_dataset is None:
+        if self.__indexed_dataset is None:
             dataset = self.dataset()
-            self._indexed_dataset = {
+            self.__indexed_dataset = {
                 i: dataset[i] for i in range(len(dataset))
             }
-        return self._indexed_dataset
+        return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """Returns deletion-resilient hypermedia pagination data"""
@@ -41,7 +42,7 @@ class Server:
         current = index
         while len(data) < page_size and current < len(dataset) + page_size:
             if current in dataset:
-                data_append(dataset[current])
+                data.append(dataset[current])
             current += 1
 
         return {
