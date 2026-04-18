@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module for Simple pagination"""
+"""Module for Simple pagination of a dataset"""
 import csv
 import math
 from typing import List
@@ -31,6 +31,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Returns the correct page of the dataset"""
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
