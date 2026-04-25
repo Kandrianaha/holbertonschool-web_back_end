@@ -6,7 +6,7 @@ export default class Pricing {
         this.currency = currency;
     }
 
-    get amout() {
+    get amount() {
         return this._amount;
     }
 
