@@ -11,7 +11,8 @@ const app = http.createServer((req, res) => {
     let output = 'This is the list of our students\n';
 
     countStudents(db)
-      .then(() => {
+      .then((data) => {
+        output += data;
         res.end(output);
       })
       .catch((err) => {
