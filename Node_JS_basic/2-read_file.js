@@ -6,7 +6,7 @@ function countStudents(path) {
     const data = fs.readFileSync(path, 'utf8');
 
     // Split lines and filter out empty lines
-    const lines = data.split('\n').filter(line => line.trim() !== '');
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
 
     // Remove the header line
     const studentLines = lines.slice(1);
@@ -16,7 +16,7 @@ function countStudents(path) {
     const fields = {};
 
     // Process each student line
-    studentLines.forEach(line => {
+    studentLines.forEach((line) => {
       const student = line.split(',');
       const firstname = student[0];
       const field = student[3];
