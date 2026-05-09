@@ -11,12 +11,12 @@ const app = http.createServer((req, res) => {
     let output = 'This is the list of our students\n';
 
     countStudents(db)
-      .then(() => {
-        res.end(output);
+      .then((data) => {
+        res.end('This is the list of our students\n' + data);
       })
       .catch((err) => {
         output += err.message;
-        res.end(output);
+        res.end('This is the list of our students\n' + err.message);
       });
   } else {
     res.end('Not found');
