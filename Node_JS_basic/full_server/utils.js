@@ -18,6 +18,6 @@ export const readDatabase = (filePath) => new Promise((resolve, reject) => {
       result[field].push(firstname);
     });
 
-    resolved(result);
+    resolve(result);
   });
 });
